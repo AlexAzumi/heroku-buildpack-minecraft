@@ -1,7 +1,10 @@
 <% open('ngrok.log') do |f| %>
   <% f.lines.select { |line| line.include?("URL:") }.each do |line| %>
-    <strong>Minecraft Server IP:</strong> <%= line.match(/tcp:\/\/(.+:[0-9]+) /)[1] %>.
-    <br /><i>Please wait at least a minute before joining the server.</i>
+    <h1>Servidor de AlexAzumi</h1>
+    <strong>Minecraft Server IP:</strong> <%= line.match(/tcp:\/\/(.+:[0-9]+) /)[1] %>
+    <br />
+    <br />
+    <i>Please wait at least a minute before joining the server.</i>
     <br />
   <% end %>
 <% end %>
@@ -9,5 +12,9 @@
   * {
     font-family: Arial;
     font-size: 1.2em;
+  }
+
+  h1 {
+    font-family: sans-serif !important;
   }
 </style>
