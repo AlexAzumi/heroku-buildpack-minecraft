@@ -24,6 +24,9 @@ sync_pid=$!
 echo "server-port=${mc_port}" >> /app/server.properties
 # Taken from "asr1191/heroku-buildpack-minecraft"
 echo "online-mode=false" >> /app/server.properties
+# More config
+echo "force-gamemode=true" >> /app/server.properties
+echo "gamemode=1" >> /app/server.properties
 for f in whitelist banned-players banned-ips ops; do
   test ! -f $f.json && echo -n "[]" > $f.json
 done
